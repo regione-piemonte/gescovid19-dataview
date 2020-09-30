@@ -1,0 +1,8 @@
+[30-Sep-2020 03:06:02 America/New_York] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;[host_env]&quot; to address: Unknown host in D:\deploy_uc\connections\PostgreConnection.php on line 58
+[30-Sep-2020 03:06:02 America/New_York] PHP Fatal error:  Unable to connect in D:\deploy_uc\connections\Connection.php on line 611
+[30-Sep-2020 03:06:25 America/New_York] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: FATAL:  password authentication failed for user &quot;schemaname_rw&quot; in D:\deploy_uc\connections\PostgreConnection.php on line 58
+[30-Sep-2020 03:06:25 America/New_York] PHP Fatal error:  Unable to connect in D:\deploy_uc\connections\Connection.php on line 611
+[30-Sep-2020 03:06:27 America/New_York] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: FATAL:  password authentication failed for user &quot;schemaname_rw&quot; in D:\deploy_uc\connections\PostgreConnection.php on line 58
+[30-Sep-2020 03:06:27 America/New_York] PHP Fatal error:  Unable to connect in D:\deploy_uc\connections\Connection.php on line 611
+[30-Sep-2020 03:06:28 America/New_York] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: FATAL:  password authentication failed for user &quot;schemaname_rw&quot; in D:\deploy_uc\connections\PostgreConnection.php on line 58
+[30-Sep-2020 03:06:28 America/New_York] PHP Fatal error:  Unable to connect in D:\deploy_uc\connections\Connection.php on line 611

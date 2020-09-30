@@ -1,0 +1,11 @@
+[Wed Sep 30 09:06:00.509804 2020] [core:warn] [pid 14120:tid 712] AH00117: Ignoring deprecated use of DefaultType in line 21 of D:/Pubblicazione/dataview/COVID19PREF/tmp/webserver.conf.
+[Wed Sep 30 09:06:00.624508 2020] [mpm_winnt:notice] [pid 14120:tid 712] AH00455: Apache/2.4.10 (Win32) PHP/5.5.18 configured -- resuming normal operations
+[Wed Sep 30 09:06:00.624508 2020] [mpm_winnt:notice] [pid 14120:tid 712] AH00456: Apache Lounge VC11 Server built: Jul 17 2014 11:50:08
+[Wed Sep 30 09:06:00.624508 2020] [core:notice] [pid 14120:tid 712] AH00094: Command line: 'C:\\Program Files (x86)\\PHPRunner10.3\\EmbeddedServer\\bin\\httpd.exe -d C:/Program Files (x86)/PHPRunner10.3/EmbeddedServer -d C:\\Program Files (x86)\\PHPRunner10.3\\EmbeddedServer -f D:\\Pubblicazione\\dataview\\COVID19PREF\\tmp\\webserver.conf'
+[Wed Sep 30 09:06:00.632487 2020] [mpm_winnt:notice] [pid 14120:tid 712] AH00418: Parent: Created child process 8884
+[Wed Sep 30 09:06:01.671254 2020] [core:warn] [pid 8884:tid 756] AH00117: Ignoring deprecated use of DefaultType in line 21 of D:/Pubblicazione/dataview/COVID19PREF/tmp/webserver.conf.
+[Wed Sep 30 09:06:01.755029 2020] [core:warn] [pid 8884:tid 756] AH00117: Ignoring deprecated use of DefaultType in line 21 of D:/Pubblicazione/dataview/COVID19PREF/tmp/webserver.conf.
+[Wed Sep 30 09:06:01.837850 2020] [mpm_winnt:notice] [pid 8884:tid 756] AH00354: Child: Starting 64 worker threads.
+[Wed Sep 30 09:07:38.160820 2020] [mpm_winnt:notice] [pid 14120:tid 712] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed Sep 30 09:07:40.166103 2020] [mpm_winnt:notice] [pid 8884:tid 756] AH00364: Child: All worker threads have exited.
+[Wed Sep 30 09:07:40.239908 2020] [mpm_winnt:notice] [pid 14120:tid 712] AH00430: Parent: Child process 8884 exited successfully.

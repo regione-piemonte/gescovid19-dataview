@@ -1,0 +1,803 @@
+<!doctype html>
+<html  {$html_attrs}>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {$pagetitle}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="{$projectPath}">
+    <link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+    {BEGIN rtlCSS}
+      <link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <link REL="stylesheet" href="{$stylepath}" type="text/css">
+    {END styleCSSFiles}
+  </head>
+  <BODY class="{$stylename} function-list" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <style>
+        {$containerCss}
+      </style>
+      <DIV class="r-topbar-page">
+        <DIV data-menu-width="full" data-fixed class="r-topheader" data-resize-name="topbar" data-body-align="left">
+          {BEGIN supertop_block}
+            <NAV class="navbar navbar-default" data-location="supertop" id="form_supertop_{$pageid}" data-makeup="topbar" {$form_supertop} data-pageid="{$pageid}">
+              <SPAN data-cellId="supertop_c1" data-pageid="{$pageid}" class="r-align-left navbar-header" data-itemid="logo" {$item_logo}>
+                {BEGIN logo_block}
+                  <A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+                    {$logo}
+                  </A>
+                {END logo_block}
+                <BUTTON data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">
+                  <SPAN class="sr-only">
+                    Toggle navigation
+                  </span>
+                  <SPAN class="icon-bar">
+                  </span>
+                </button>
+              </span>
+              <SPAN data-cellId="supertop_c1" data-pageid="{$pageid}" class="r-align-left navbar-collapse" data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+                {$menu main horizontal}
+              </span>
+              <SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="snippet" {$item_snippet} data-topcell-item-type="snippet">
+                <span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
+                  {$event schemaname_soggetto_snippet}
+                </span>
+              </span>
+              <SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="list_options" {$item_list_options} data-topcell-item-type="list_options">
+                <span data-itemtype="list_options" data-itemid="list_options" {$item_list_options} data-pageid="{$pageid}" data-small data-button-item>
+                  <SPAN class="dropdown">
+                    <BUTTON type="button" title class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <SPAN class="glyphicon glyphicon-cog">
+                      </span>
+                      <SPAN class="caret">
+                      </span>
+                    </button>
+                    <UL class="dropdown-menu">
+                      {BEGIN searchPanelTopButtons}
+                        <li data-itemtype="show_search_panel" data-itemid="show_search_panel" {$item_show_search_panel} data-pageid="{$pageid}" data-small >
+                          <a  id="showOptPanel{$id}"  title="" >
+                            Mostra il pannello di ricerca
+                          </a>
+                        </li>
+                      {END searchPanelTopButtons}
+                      {BEGIN searchPanelTopButtons}
+                        <li data-itemtype="hide_search_panel" data-itemid="hide_search_panel" {$item_hide_search_panel} data-pageid="{$pageid}" data-small >
+                          <a  id="hideOptPanel{$id}"  title="" >
+                            Nascondi il pannello di ricerca
+                          </a>
+                        </li>
+                      {END searchPanelTopButtons}
+                    </ul>
+                  </span>
+                </span>
+              </span>
+            </nav>
+          {END supertop_block}
+          {$locking}
+        </div>
+        <DIV data-body-align="left" data-body-width="full" class="r-body" data-resize-top="topbar">
+          <DIV class="r-top">
+            {BEGIN top_block}
+              <DIV class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="topbar" {$form_top} data-pageid="{$pageid}">
+                <DIV class="row">
+                  <DIV data-cellId="top_c1" data-pageid="{$pageid}" {$cell_top_c1} class="r-ori-vert col-md-12">
+                    {BEGIN breadcrumb}
+                      <OL class="breadcrumb" data-itemtype="breadcrumb" data-itemid="breadcrumb" {$item_breadcrumb} data-pageid="{$pageid}">
+                        <li >
+                          <a href="{$crumb_home_link}">
+                            <SPAN class="glyphicon glyphicon-home">
+                            </span>
+                          </a>
+                          {$crumb_dropdown}
+                        </li>
+                        {BEGIN crumb}
+                          <LI class="{$crumb_item_class}">
+                            {BEGIN crumb_title_link}
+                              <a {$crumb_attrs}>
+                                {$crumb_title}
+                              </a>
+                            {END crumb_title_link}
+                            {BEGIN crumb_title_span}
+                              <span {$crumb_attrs}>
+                                {$crumb_title}
+                              </span>
+                            {END crumb_title_span}
+                            {$crumb_dropdown}
+                          </li>
+                        {END crumb}
+                      </ol>
+                    {END breadcrumb}
+                  </div>
+                </div>
+                <DIV class="row">
+                  <DIV data-cellId="top_c3" data-pageid="{$pageid}" {$cell_top_c3} class="r-ori-vert col-md-12">
+                    {BEGIN mastertable_block}
+                      <div data-itemtype="master_info" data-itemid="master_info" {$item_master_info} data-pageid="{$pageid}">
+                        {$showmasterfile}
+                      </div>
+                    {END mastertable_block}
+                  </div>
+                </div>
+              </div>
+            {END top_block}
+          </div>
+          <DIV class="r-content">
+            <DIV class="r-left" {$blockattr_left} {$form_left}>
+              {BEGIN left_block}
+                <TABLE class="r-fluid r-form" data-location="left" id="form_left_{$pageid}" data-makeup="topbar" {$form_left} data-pageid="{$pageid}">
+                  <tbody>
+                    <tr>
+                      <TD class="r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}">
+                        <!-- Begin Search panel content -->
+                        <DIV class="searchOptions panel panel-primary searchPanelContainer" {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}">
+                          <DIV class="panel-heading">
+                            <DIV class="btn-group" id="addSearchFieldButton{$id}">
+                              <BUTTON id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ricerca
+                                <SPAN class="caret">
+                                </span>
+                              </button>
+                            </div>
+                            <DIV class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+                              <BUTTON type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <SPAN class="glyphicon glyphicon glyphicon-option-vertical">
+                                </span>
+                              </button>
+                              <UL class="dropdown-menu dropdown-left">
+                                <li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}>
+                                  <a>
+                                    Mostra opzioni
+                                  </a>
+                                </li>
+                                <LI role="separator" class="divider">
+                                </li>
+                                <LI class="srchCritTop" style="display: none;">
+                                  <a>
+                                    <input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}>
+                                    <label for="radioAll">
+                                      <SPAN class="glyphicon">
+                                        &nbsp;
+                                      </span>
+                                      Tutte le condizioni
+                                    </label>
+                                  </a>
+                                </li>
+                                <LI class="srchCritTop" style="display: none;">
+                                  <a>
+                                    <input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}>
+                                    <label for="radioAny">
+                                      <SPAN class="glyphicon">
+                                        &nbsp;
+                                      </span>
+                                      Ogni condizione
+                                    </label>
+                                  </a>
+                                </li>
+                                <LI role="separator" class="divider">
+                                </li>
+                                <li>
+                                  <A class="close-button">
+                                    <SPAN class="glyphicon glyphicon-remove">
+                                      &nbsp;
+                                    </span>
+                                    nascondi
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <DIV class="panel-body controlsBlock" {$bottomSearchButt_attrs}>
+                            {BEGIN searchCtrlBlock}
+                              <DIV class="srchPanelRow form-group" {$filterRow_attrs}>
+                                <label>
+                                  {$fLabel}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock}
+                            {BEGIN searchCtrlBlock_email}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_email}" {$filterRow_attrs_email}>
+                                <label>
+                                  {$label schemaname_soggetto email}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_email}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_email}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_email}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_email}
+                          </div>
+                          <DIV class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+                            <BUTTON class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>
+                              Cerca
+                            </button>
+                            <BUTTON class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+                              Mostra tutto
+                            </button>
+                          </div>
+                        </div>
+                        <!-- End Search panel content -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              {END left_block}
+            </div>
+            <DIV class="r-data-block" data-body-width="full">
+              {BEGIN above-grid_block}
+                <DIV class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="topbar" {$form_above-grid} data-pageid="{$pageid}">
+                  <DIV class="row">
+                    <DIV data-cellId="above-grid_c1" data-pageid="{$pageid}" {$cell_above-grid_c1} class="r-ori-vert col-md-6">
+                      {BEGIN firstAboveGridCell}
+                      {END firstAboveGridCell}
+                    </div>
+                    <DIV data-cellId="above-grid_c2" data-pageid="{$pageid}" {$cell_above-grid_c2} class="r-align-right col-md-6">
+                      <span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-small >
+                        {$details_found_labeldetails_found}
+                      </span>
+                      <span data-itemtype="page_size" data-itemid="page_size" {$item_page_size} data-pageid="{$pageid}" >
+                        {$recsPerPage}
+                      </span>
+                      {BEGIN print_details}
+                        <div>
+                          <label for="printDetailsToggler{$id}">
+                            <input type="checkbox" id="printDetailsToggler{$id}">
+                            Stampa i dettagli
+                          </label>
+                          <div  id="printdetailstables{$id}" style="display:none;">
+                            {BEGIN print_details_schemaname_decorso}
+                              <div>
+                                <label for="printDetailsschemaname_decorso{$id}">
+                                  <input type="checkbox" value="schemaname_decorso" id="printDetailsschemaname_decorso{$id}" checked>
+                                  Decorso
+                                </label>
+                              </div>
+                            {END print_details_schemaname_decorso}
+                            {BEGIN print_details_tampone}
+                              <div>
+                                <label for="printDetailstampone{$id}">
+                                  <input type="checkbox" value="tampone" id="printDetailstampone{$id}" checked>
+                                  Tampone
+                                </label>
+                              </div>
+                            {END print_details_tampone}
+                            {BEGIN print_details_tampone_totale}
+                              <div>
+                                <label for="printDetailstampone_totale{$id}">
+                                  <input type="checkbox" value="tampone_totale" id="printDetailstampone_totale{$id}" checked>
+                                  Tampone Totale
+                                </label>
+                              </div>
+                            {END print_details_tampone_totale}
+                          </div>
+                        </div>
+                      {END print_details}
+                    </div>
+                  </div>
+                  <DIV class="row">
+                    <DIV data-cellId="above-grid_c3" data-pageid="{$pageid}" {$cell_above-grid_c3} class="r-ori-vert col-md-6">
+                    </div>
+                    <DIV data-cellId="above-grid_c4" data-pageid="{$pageid}" {$cell_above-grid_c4} class="r-align-right r-ori-vert col-md-6">
+                    </div>
+                  </div>
+                </div>
+              {END above-grid_block}
+              <DIV class="r-grid">
+                {BEGIN grid_block}
+                  {BEGIN grid_tabs}
+                    <UL class="nav nav-tabs bsgrid_tabs">
+                      {$grid_tabs_content}
+                    </ul>
+                  {END grid_tabs}
+                  {BEGIN message_block}
+                    <DIV data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>
+                      {$message}
+                    </div>
+                  {END message_block}
+                  <style>
+                    @media screen and (max-width: 767px) {
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="codice_fiscale"]:before {
+                    content: "{$label schemaname_soggetto codice_fiscale}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_asr"]:before {
+                    content: "{$label schemaname_soggetto id_asr}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="cognome"]:before {
+                    content: "{$label schemaname_soggetto cognome}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="nome"]:before {
+                    content: "{$label schemaname_soggetto nome}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="comune_residenza_istat"]:before {
+                    content: "{$label schemaname_soggetto comune_residenza_istat}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="comune_domicilio_istat"]:before {
+                    content: "{$label schemaname_soggetto comune_domicilio_istat}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="indirizzo_domicilio"]:before {
+                    content: "{$label schemaname_soggetto indirizzo_domicilio}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="telefono_recapito"]:before {
+                    content: "{$label schemaname_soggetto telefono_recapito}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_soggetto"]:before {
+                    content: "{$label schemaname_soggetto id_soggetto}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="data_nascita"]:before {
+                    content: "{$label schemaname_soggetto data_nascita}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="asl_residenza"]:before {
+                    content: "{$label schemaname_soggetto asl_residenza}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="asl_domicilio"]:before {
+                    content: "{$label schemaname_soggetto asl_domicilio}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="email"]:before {
+                    content: "{$label schemaname_soggetto email}";
+                    }
+                    }
+                  </style>
+                  <TABLE data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class="table {$grid_classes} r-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" data-body-height="2">
+                    <thead>
+                      {BEGIN grid_header}
+                        <TR {$rowattrs} {$row_grid_0} class="{$rowclass} {$gridHeader_class} r-gridrow">
+                          {BEGIN cellblock_grid_headcell_icons}
+                            <TH {$cell_grid_headcell_icons} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list" data-control-cell>
+                            </th>
+                          {END cellblock_grid_headcell_icons}
+                          {BEGIN cellblock_grid_headcell_details}
+                            <TH {$cell_grid_headcell_details} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_details" data-pageid="{$pageid}" data-record-id="{$recId}" data-control-cell>
+                            </th>
+                          {END cellblock_grid_headcell_details}
+                          {BEGIN cellblock_grid_headcell_field}
+                            <TH {$cell_grid_headcell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_asr_fieldheadercolumn}
+                                {BEGIN id_asr_fieldheader}
+                                  <SPAN {$id_asr_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_asr">
+                                    {$label schemaname_soggetto id_asr}
+                                    {$arrow_icon_id_asr}
+                                  </SPAN>
+                                {END id_asr_fieldheader}
+                              {END id_asr_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field}
+                          {BEGIN cellblock_grid_headcell_field1}
+                            <TH {$cell_grid_headcell_field1} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN cognome_fieldheadercolumn}
+                                {BEGIN cognome_fieldheader}
+                                  <SPAN {$cognome_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="cognome">
+                                    {$label schemaname_soggetto cognome}
+                                    {$arrow_icon_cognome}
+                                  </SPAN>
+                                {END cognome_fieldheader}
+                              {END cognome_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field1}
+                          {BEGIN cellblock_grid_headcell_field2}
+                            <TH {$cell_grid_headcell_field2} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN nome_fieldheadercolumn}
+                                {BEGIN nome_fieldheader}
+                                  <SPAN {$nome_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="nome">
+                                    {$label schemaname_soggetto nome}
+                                    {$arrow_icon_nome}
+                                  </SPAN>
+                                {END nome_fieldheader}
+                              {END nome_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field2}
+                          {BEGIN cellblock_grid_headcell_field3}
+                            <TH {$cell_grid_headcell_field3} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_nascita_fieldheadercolumn}
+                                {BEGIN data_nascita_fieldheader}
+                                  <SPAN {$data_nascita_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label4" {$item_grid_field_label4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_nascita">
+                                    {$label schemaname_soggetto data_nascita}
+                                    {$arrow_icon_data_nascita}
+                                  </SPAN>
+                                {END data_nascita_fieldheader}
+                              {END data_nascita_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field3}
+                          {BEGIN cellblock_grid_headcell_field4}
+                            <TH {$cell_grid_headcell_field4} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN codice_fiscale_fieldheadercolumn}
+                                {BEGIN codice_fiscale_fieldheader}
+                                  <SPAN {$codice_fiscale_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="codice_fiscale">
+                                    {$label schemaname_soggetto codice_fiscale}
+                                    {$arrow_icon_codice_fiscale}
+                                  </SPAN>
+                                {END codice_fiscale_fieldheader}
+                              {END codice_fiscale_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field4}
+                          {BEGIN cellblock_grid_headcell_field8}
+                            <TH {$cell_grid_headcell_field8} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN email_fieldheadercolumn}
+                                {BEGIN email_fieldheader}
+                                  <SPAN {$email_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label7" {$item_grid_field_label7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="email">
+                                    {$label schemaname_soggetto email}
+                                    {$arrow_icon_email}
+                                  </SPAN>
+                                {END email_fieldheader}
+                              {END email_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field8}
+                          {BEGIN cellblock_grid_headcell_field5}
+                            <TH {$cell_grid_headcell_field5} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_residenza_fieldheadercolumn}
+                                <span data-itemtype="grid_field_label" data-itemid="grid_field_label5" {$item_grid_field_label5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_residenza">
+                                  {$label schemaname_soggetto asl_residenza}
+                                </span>
+                              {END asl_residenza_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field5}
+                          {BEGIN cellblock_grid_headcell_field6}
+                            <TH {$cell_grid_headcell_field6} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_domicilio_fieldheadercolumn}
+                                <span data-itemtype="grid_field_label" data-itemid="grid_field_label6" {$item_grid_field_label6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_domicilio">
+                                  {$label schemaname_soggetto asl_domicilio}
+                                </span>
+                              {END asl_domicilio_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field6}
+                          {BEGIN cellblock_grid_headcell_field9}
+                            <TH {$cell_grid_headcell_field9} {$recordattrs} class="r-ori-vert {$comune_residenza_istat_class}" data-field="comune_residenza_istat" data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN comune_residenza_istat_fieldheadercolumn}
+                                {BEGIN comune_residenza_istat_fieldheader}
+                                  <SPAN {$comune_residenza_istat_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="comune_residenza_istat">
+                                    {$label schemaname_soggetto comune_residenza_istat}
+                                    {$arrow_icon_comune_residenza_istat}
+                                  </SPAN>
+                                {END comune_residenza_istat_fieldheader}
+                              {END comune_residenza_istat_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field9}
+                          {BEGIN cellblock_grid_headcell_field10}
+                            <TH {$cell_grid_headcell_field10} {$recordattrs} class="r-ori-vert {$comune_domicilio_istat_class}" data-field="comune_domicilio_istat" data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN comune_domicilio_istat_fieldheadercolumn}
+                                {BEGIN comune_domicilio_istat_fieldheader}
+                                  <SPAN {$comune_domicilio_istat_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="comune_domicilio_istat">
+                                    {$label schemaname_soggetto comune_domicilio_istat}
+                                    {$arrow_icon_comune_domicilio_istat}
+                                  </SPAN>
+                                {END comune_domicilio_istat_fieldheader}
+                              {END comune_domicilio_istat_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field10}
+                          {BEGIN cellblock_grid_headcell_field11}
+                            <TH {$cell_grid_headcell_field11} {$recordattrs} class="r-ori-vert {$indirizzo_domicilio_class}" data-field="indirizzo_domicilio" data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN indirizzo_domicilio_fieldheadercolumn}
+                                {BEGIN indirizzo_domicilio_fieldheader}
+                                  <SPAN {$indirizzo_domicilio_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="indirizzo_domicilio">
+                                    {$label schemaname_soggetto indirizzo_domicilio}
+                                    {$arrow_icon_indirizzo_domicilio}
+                                  </SPAN>
+                                {END indirizzo_domicilio_fieldheader}
+                              {END indirizzo_domicilio_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field11}
+                          {BEGIN cellblock_grid_headcell_field16}
+                            <TH {$cell_grid_headcell_field16} {$recordattrs} class="r-ori-vert {$telefono_recapito_class}" data-field="telefono_recapito" data-cellId="grid_headcell_field16" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN telefono_recapito_fieldheadercolumn}
+                                {BEGIN telefono_recapito_fieldheader}
+                                  <SPAN {$telefono_recapito_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label3" {$item_grid_field_label3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="telefono_recapito">
+                                    {$label schemaname_soggetto telefono_recapito}
+                                    {$arrow_icon_telefono_recapito}
+                                  </SPAN>
+                                {END telefono_recapito_fieldheader}
+                              {END telefono_recapito_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field16}
+                          {BEGIN cellblock_grid_headcell_field12}
+                            <TH {$cell_grid_headcell_field12} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </th>
+                          {END cellblock_grid_headcell_field12}
+                          {BEGIN cellblock_grid_headcell_field7}
+                            <TH {$cell_grid_headcell_field7} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </th>
+                          {END cellblock_grid_headcell_field7}
+                        </tr>
+                      {END grid_header}
+                    </thead>
+                    <tbody>
+                      {BEGIN grid_row}
+                        <TR {$rowattrs} {$row_grid_1} class="{$rowclass} r-gridrow">
+                          {BEGIN cellblock_grid_cell_icons}
+                            <TD {$cell_grid_cell_icons} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list" data-control-cell>
+                              {BEGIN view_column}
+                                {BEGIN view_link}
+                                  <span data-itemtype="grid_view" data-itemid="grid_view" {$item_grid_view} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                    <A type="button" title="Guarda il record" class="btn-link glyphicon glyphicon-search" href="schemaname_soggetto_view.php?{$editlink}" {$viewlink_attrs} title="Dettagli">
+                                    </a>
+                                  </span>
+                                {END view_link}
+                              {END view_column}
+                            </td>
+                          {END cellblock_grid_cell_icons}
+                          {BEGIN cellblock_grid_cell_details}
+                            <TD {$cell_grid_cell_details} {$recordattrs} class="
+" data-cellId="grid_cell_details" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list" data-control-cell>
+                              {BEGIN dtables_link}
+                                <A data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" {$dtables_link_attrs} class="{$dtables_link_class}" title="Mostra i dettagli">
+                                  <SPAN class="glyphicon glyphicon-th-list">
+                                  </span>
+                                </a>
+                              {END dtables_link}
+                              {BEGIN tampone_dtable_link}
+                                <span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
+                                  <A {$tampone_link_attrs} data-short-details="tampone" class="{$tampone_dlink_class}" title="{$caption schemaname_tampone }">
+                                    {BEGIN tampone_childcount}
+                                      <SPAN class="details-badge badge tampone_badge" {$tampone_childnumber_attr}>
+                                        {$tampone_childnumber}
+                                      </span>
+                                    {END tampone_childcount}
+                                  </a>
+                                </span>
+                              {END tampone_dtable_link}
+                              {BEGIN schemaname_decorso_dtable_link}
+                                <span data-itemtype="grid_details_link" data-itemid="grid_details_link1" {$item_grid_details_link1} data-pageid="{$pageid}" data-record-id="{$recId}">
+                                  <A {$schemaname_decorso_link_attrs} data-short-details="schemaname_decorso" class="{$schemaname_decorso_dlink_class}" title="{$caption schemaname_decorso }">
+                                    {BEGIN schemaname_decorso_childcount}
+                                      <SPAN class="details-badge badge schemaname_decorso_badge" {$schemaname_decorso_childnumber_attr}>
+                                        {$schemaname_decorso_childnumber}
+                                      </span>
+                                    {END schemaname_decorso_childcount}
+                                  </a>
+                                </span>
+                              {END schemaname_decorso_dtable_link}
+                            </td>
+                          {END cellblock_grid_cell_details}
+                          {BEGIN cellblock_grid_cell_field}
+                            <TD {$cell_grid_cell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_asr_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_asr" data-default-width >
+                                  {$id_asr_value}
+                                </span>
+                              {END id_asr_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field}
+                          {BEGIN cellblock_grid_cell_field1}
+                            <TD {$cell_grid_cell_field1} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN cognome_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="cognome" data-default-width >
+                                  {$cognome_value}
+                                </span>
+                              {END cognome_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field1}
+                          {BEGIN cellblock_grid_cell_field2}
+                            <TD {$cell_grid_cell_field2} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN nome_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="nome" data-default-width >
+                                  {$nome_value}
+                                </span>
+                              {END nome_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field2}
+                          {BEGIN cellblock_grid_cell_field3}
+                            <TD {$cell_grid_cell_field3} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_nascita_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_nascita" data-default-width >
+                                  {$data_nascita_value}
+                                </span>
+                              {END data_nascita_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field3}
+                          {BEGIN cellblock_grid_cell_field4}
+                            <TD {$cell_grid_cell_field4} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN codice_fiscale_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="codice_fiscale" data-default-width >
+                                  {$codice_fiscale_value}
+                                </span>
+                              {END codice_fiscale_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field4}
+                          {BEGIN cellblock_grid_cell_field12}
+                            <TD {$cell_grid_cell_field12} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_field12" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN email_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="email" data-default-width >
+                                  {$email_value}
+                                </span>
+                              {END email_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field12}
+                          {BEGIN cellblock_grid_cell_field5}
+                            <TD {$cell_grid_cell_field5} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_residenza_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field5" {$item_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_residenza" data-default-width >
+                                  {$asl_residenza_value}
+                                </span>
+                              {END asl_residenza_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field5}
+                          {BEGIN cellblock_grid_cell_field6}
+                            <TD {$cell_grid_cell_field6} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_domicilio_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_domicilio" data-default-width >
+                                  {$asl_domicilio_value}
+                                </span>
+                              {END asl_domicilio_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field6}
+                          {BEGIN cellblock_grid_cell_field9}
+                            <TD {$cell_grid_cell_field9} {$recordattrs} class="r-ori-vert {$comune_residenza_istat_class}" data-field="comune_residenza_istat" data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN comune_residenza_istat_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="comune_residenza_istat" data-default-width >
+                                  {$comune_residenza_istat_value}
+                                </span>
+                              {END comune_residenza_istat_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field9}
+                          {BEGIN cellblock_grid_cell_field10}
+                            <TD {$cell_grid_cell_field10} {$recordattrs} class="r-ori-vert {$comune_domicilio_istat_class}" data-field="comune_domicilio_istat" data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN comune_domicilio_istat_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="comune_domicilio_istat" data-default-width >
+                                  {$comune_domicilio_istat_value}
+                                </span>
+                              {END comune_domicilio_istat_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field10}
+                          {BEGIN cellblock_grid_cell_field11}
+                            <TD {$cell_grid_cell_field11} {$recordattrs} class="r-ori-vert {$indirizzo_domicilio_class}" data-field="indirizzo_domicilio" data-cellId="grid_cell_field11" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN indirizzo_domicilio_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="indirizzo_domicilio" data-default-width >
+                                  {$indirizzo_domicilio_value}
+                                </span>
+                              {END indirizzo_domicilio_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field11}
+                          {BEGIN cellblock_grid_headcell_field17}
+                            <TD {$cell_grid_headcell_field17} {$recordattrs} class="r-ori-vert {$telefono_recapito_class}" data-field="telefono_recapito" data-cellId="grid_headcell_field17" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN telefono_recapito_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="telefono_recapito" data-default-width >
+                                  {$telefono_recapito_value}
+                                </span>
+                              {END telefono_recapito_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_headcell_field17}
+                          {BEGIN cellblock_grid_headcell_field13}
+                            <TD {$cell_grid_headcell_field13} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </td>
+                          {END cellblock_grid_headcell_field13}
+                          {BEGIN cellblock_grid_cell_field7}
+                            <TD {$cell_grid_cell_field7} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </td>
+                          {END cellblock_grid_cell_field7}
+                        </tr>
+                        <TR {$rowattrs} {$row_grid_2} class="{$rowclass}">
+                          {BEGIN cellblock_grid_cell_dpreview}
+                            <TD {$cell_grid_cell_dpreview} {$recordattrs} class="{$indirizzo_domicilio_class}" data-field="indirizzo_domicilio" data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              <div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="tampone,schemaname_decorso"
+			data-details-tampone			data-details-schemaname_decorso	>
+                                <span data-details-inside data-short-table="tampone">
+                                </span>
+                                <span data-details-inside data-short-table="schemaname_decorso">
+                                </span>
+                                <div data-details-preview>
+                                </div>
+                              </div>
+                            </td>
+                          {END cellblock_grid_cell_dpreview}
+                          {BEGIN cellblock_grid_headcell_field18}
+                            <TD {$cell_grid_headcell_field18} {$recordattrs} class="r-ori-vert {$telefono_recapito_class}" data-field="telefono_recapito" data-cellId="grid_headcell_field18" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </td>
+                          {END cellblock_grid_headcell_field18}
+                          {BEGIN cellblock_grid_headcell_field14}
+                            <TD {$cell_grid_headcell_field14} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field14" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </td>
+                          {END cellblock_grid_headcell_field14}
+                          {BEGIN cellblock_grid_cell_field8}
+                            <TD {$cell_grid_cell_field8} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </td>
+                          {END cellblock_grid_cell_field8}
+                        </tr>
+                      {END grid_row}
+                    </tbody>
+                    <tfoot>
+                      <TR {$rowattrs} {$row_grid_3} class="{$rowclass} {$gridFooter_class} r-gridrow">
+                        {BEGIN cellblock_grid_footcell_icons}
+                          <TD {$cell_grid_footcell_icons} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_icons" data-pageid="{$pageid}" data-record-id="{$recId}">
+                          </td>
+                        {END cellblock_grid_footcell_icons}
+                        {BEGIN cellblock_grid_footcell_details}
+                          <TD {$cell_grid_footcell_details} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_details" data-pageid="{$pageid}" data-record-id="{$recId}">
+                          </td>
+                        {END cellblock_grid_footcell_details}
+                        {BEGIN cellblock_grid_footcell_field}
+                          <TD {$cell_grid_footcell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field}
+                        {BEGIN cellblock_grid_footcell_field1}
+                          <TD {$cell_grid_footcell_field1} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field1}
+                        {BEGIN cellblock_grid_footcell_field2}
+                          <TD {$cell_grid_footcell_field2} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field2}
+                        {BEGIN cellblock_grid_footcell_field3}
+                          <TD {$cell_grid_footcell_field3} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field3}
+                        {BEGIN cellblock_grid_footcell_field4}
+                          <TD {$cell_grid_footcell_field4} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field4}
+                        {BEGIN cellblock_grid_footcell_field5}
+                          <TD {$cell_grid_footcell_field5} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field5}
+                        {BEGIN cellblock_grid_footcell_field6}
+                          <TD {$cell_grid_footcell_field6} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field6}
+                        {BEGIN cellblock_grid_footcell_field9}
+                          <TD {$cell_grid_footcell_field9} {$recordattrs} class="r-ori-vert {$comune_residenza_istat_class}" data-field="comune_residenza_istat" data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field9}
+                        {BEGIN cellblock_grid_footcell_field10}
+                          <TD {$cell_grid_footcell_field10} {$recordattrs} class="r-ori-vert {$comune_domicilio_istat_class}" data-field="comune_domicilio_istat" data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field10}
+                        {BEGIN cellblock_grid_footcell_field11}
+                          <TD {$cell_grid_footcell_field11} {$recordattrs} class="r-ori-vert {$indirizzo_domicilio_class}" data-field="indirizzo_domicilio" data-cellId="grid_footcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field11}
+                        {BEGIN cellblock_grid_headcell_field19}
+                          <TD {$cell_grid_headcell_field19} {$recordattrs} class="r-ori-vert {$telefono_recapito_class}" data-field="telefono_recapito" data-cellId="grid_headcell_field19" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_headcell_field19}
+                        {BEGIN cellblock_grid_headcell_field15}
+                          <TD {$cell_grid_headcell_field15} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_field15" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_headcell_field15}
+                        {BEGIN cellblock_grid_footcell_field7}
+                          <TD {$cell_grid_footcell_field7} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="schemaname_soggetto_list">
+                          </td>
+                        {END cellblock_grid_footcell_field7}
+                      </tr>
+                    </tfoot>
+                  </table>
+                {END grid_block}
+              </div>
+              {BEGIN below-grid_block}
+                <DIV class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="topbar" {$form_below-grid} data-pageid="{$pageid}">
+                  <DIV class="row">
+                    <DIV data-cellId="below-grid_c1" data-pageid="{$pageid}" {$cell_below-grid_c1} class="r-align-center r-ori-vert col-md-12">
+                      {BEGIN pagination_block}
+                        <span data-itemtype="pagination" data-itemid="pagination" {$item_pagination} data-pageid="{$pageid}" >
+                          {$pagination}
+                        </span>
+                      {END pagination_block}
+                    </div>
+                  </div>
+                </div>
+              {END below-grid_block}
+            </div>
+          </div>
+        </div>
+      </div>
+      {$footer}
+    {END body}
+  </body>
+</html>
